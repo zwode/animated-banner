@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Header</title>
+		<script src="https://js.cx/libs/animate.js"></script>
+		<link rel="stylesheet" href="./assets/main.css" type="text/css">
+	</head>
+	<body>
+
+		<div class="header hidden">
+			<div class="d-flex pos-relative" id="four1">
+				<img src="./assets/logo 1.png" class="logo">
+				<div class="ml-header header-text">
+					Play2earn&NFT sectors are rocking
+				</div>
+			</div>
+			<div class="d-flex justify-content-around img-header">
+				<img src="assets/img/cryptocurrency_bnb.png" class="md-d-none" alt="">
+				<img src="assets/img/emojione-v1_stock-chart.png" class="md-d-none" alt="">
+				<img src="assets/img/cryptocurrency_eth.png" class="ts-none" alt="">
+				<img src="assets/img/shark.png" alt="" class="ts-none">
+			</div>
+		</div>
+
+		<div class="header hidden">
+			<div class="d-flex pos-relative" id="three1">
+				<img src="./assets/logo 1.png" class="logo">
+				<div class="ml-header header-text">
+					Don´t miss the hype!
+				</div>
+			</div>
+			<div class="d-flex justify-content-around img-header">
+				<img src="assets/img/12.png" class="md-d-none" alt="">
+				<img src="assets/img/22.png" class="" alt="">
+				<img src="assets/img/32.png" class="ts-none">
+			</div>
+		</div>
+
+		<div class="header head2 hidden">
+			<div class="d-flex pos-relative" id="two1">
+				<img src="./assets/logo 1.png" class="logo">
+				<div class="ml-header header-text">
+					PVP mode
+				</div>
+			</div>
+			<div class="d-flex justify-content-around w-100 pos-relative md-flex-wrap" id="two2">
+				<div class="text-header-metaverse border-text std-size ml-30">
+					Metaverse under development
+				</div>
+				<div class="text-header-game border-text std-size">
+					Game DAO token
+				</div>
+				<div class="text-header-nft border-text std-size">
+					NFT heroes
+				</div>
+				<div class="text-header-ar border-text std-size">
+					AR in V3
+				</div>
+			</div>
+		</div>
+
+		<div class="header hidden">
+			<div class="d-flex pos-relative" id="test1">
+				<img src="./assets/logo 1.png" class="logo">
+				<div class="ml-header header-text">
+					Piranhas
+				</div>
+			</div>
+			<div class="d-flex img-header" id="test2">
+				<img src="assets/img/1.png" class="ts-none" alt="">
+				<img src="assets/img/2.png" class="ts-none" alt="">
+				<img src="assets/img/3.png" class="md-d-none" alt="">
+				<img src="assets/img/4.png" class="md-d-none" alt="">
+			</div>
+			<a href="https://www.google.com/">
+				<div class="button-join d-flex w-100 pos-relative" id="test3">
+					<div class="relative">	
+						<img src="./assets/img/join.png" alt="">
+						<p class="text-join">
+							JOIN
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</body>
+</html>
+
+<script>
+	head = document.querySelectorAll('.header');
+
+	function makeEaseOut(timing) {
+		return function(timeFraction) {
+			return 1 - timing(1 - timeFraction);
+		}
+	}
+
+	function bounce(timeFraction) {
+		for (let a = 0, b = 1; 1; a += b, b /= 2) {
+			if (timeFraction >= (7 - 4 * a) / 11) {
+			return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+			}
+		}
+	}
+
+	let bounceEaseOut = makeEaseOut(bounce);
+
+	four = function() {	
+		document.querySelectorAll('.header')[0].classList.toggle('hidden');
+		animate({
+			duration: 1000,
+			timing: bounceEaseOut,
+			draw: function(progress) {
+				four1.style.top = progress * 50 + 'px';
+			}
+		});
+		setTimeout(()=> {
+			document.querySelectorAll('.header')[0].classList.toggle('hidden');
+			three();
+		}, 3000);
+	};
+
+	three = function() {
+		document.querySelectorAll('.header')[1].classList.toggle('hidden');
+		animate({
+			duration: 1000,
+			timing: bounceEaseOut,
+			draw: function(progress) {
+				three1.style.top = progress * 50 + 'px';
+			}
+		});
+		setTimeout(()=> {
+			document.querySelectorAll('.header')[1].classList.toggle('hidden');
+			two();
+		}, 3000);
+	};
+
+	two = function() {
+		document.querySelectorAll('.header')[2].classList.toggle('hidden');
+		animate({
+			duration: 1000,
+			timing: bounceEaseOut,
+			draw: function(progress) {
+				two1.style.top = progress * 50 + 'px';
+				two2.style.top = progress * 50 + 'px';
+			}
+		});
+		setTimeout(()=> {
+			document.querySelectorAll('.header')[2].classList.toggle('hidden');
+			first();
+		}, 3000);
+	};
+
+	first = function() {
+		document.querySelectorAll('.header')[3].classList.toggle('hidden');
+		animate({
+			duration: 1000,
+			timing: bounceEaseOut,
+			draw: function(progress) {
+				test1.style.top = progress * 50 + 'px';
+				test3.style.top = progress * 56 + 'px';
+			}
+		});
+		setTimeout(()=> {
+			document.querySelectorAll('.header')[3].classList.toggle('hidden');
+			four();
+		}, 3000);
+	};
+
+	four();
+	//first();
+</script>
+

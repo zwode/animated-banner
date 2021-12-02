@@ -1,0 +1,165 @@
+@font-face {
+    font-family: UA_AdLib_BT; /* Гарнитура шрифта */
+    src: url(./fonts/koho_400_undefined.ttf); /* Путь к файлу со шрифтом */
+}
+
+body {
+    margin: 0;
+    background-color: blue;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0 !important;
+    transition: opacity 0.5s linear;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.pos-relative {
+    position: relative;
+    margin-top: -50px;
+    height: 90px;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+.std-size {
+    font-size: 40px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+.text-header-nft {
+    color: #7A9FFF;
+    transform: rotate(3.36deg);
+}
+
+.text-header-ar {
+    color: #B57AFF;
+    transform: rotate(-3.11deg);
+}
+
+.text-header-game {
+    color: #B57AFF;
+    transform: rotate(-4.26deg);
+}
+
+.text-header-metaverse {
+    color: #7A9FFF;
+    transform: rotate(1.67deg);
+}
+
+.header {
+    transition: opacity 0.5s linear;
+    display: flex;
+    height: 90px;
+    font-family: UA_AdLib_BT;
+    background-image: url("./img/backgoundblock.png");
+}
+
+.head2 {
+    background-image: url("./img/background2.png");
+    color: #fff;
+}
+
+.logo {
+    width: 124px;
+    height: 65px;
+    margin: 12px 0 12px 24px;
+}
+
+.ml-header {
+    margin-left: 60px;
+}
+
+.header-text {
+    font-size: 42px;
+    line-height: 53px;
+    color: #fff;
+    align-self: center;
+}
+
+.border-text {
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    white-space: nowrap;
+}
+
+.head2 .header-text {
+    white-space: nowrap;
+    font-size: 40px;
+    line-height: 50px;
+    color: #B57AFF;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    transform: rotate(-7.82deg);
+}
+
+.img-header {
+    margin-left: 90px;
+}
+
+.img-header img {
+    margin-left: 40px;
+}
+
+.img-header img:first-child {
+    margin-left: 0;
+}
+
+.button-join {
+    justify-content: end;
+}
+
+.text-join {
+    position: absolute;
+    left: 25%;
+    top: 0;
+    font-size: 48px;
+    line-height: 60px;
+    color: #fff;
+    margin: 0;
+}
+
+.relative {
+    position: relative;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+@media screen and (min-width:768px) and (max-width:1440px) {
+    .header-text {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .std-size {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .md-flex-wrap {
+        flex-wrap: wrap;
+    }
+    .md-d-none {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header-text {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .std-size {
+        font-size: 15px;
+        line-height: 19px;
+    }
+    .ts-none {
+        display: none;
+    }
+    .header {
+        justify-content: space-between;
+    }
+}
